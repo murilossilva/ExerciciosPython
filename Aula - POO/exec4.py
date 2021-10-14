@@ -9,7 +9,7 @@ class Pessoa:
         self.age = self.age + 1
         _str = (f'Agora {self.name} tem {self.age} anos de idade')
         if self.age < 21:
-            self.height = self.height + (0.05)
+            self.height += 0.05
             print(f'{self.name} cresceu e agora tem {self.height} cm'
                   ' de altura!')
         return _str
@@ -33,3 +33,7 @@ class Pessoa:
         _str = (f'Uau, alguém comeu fermento! {self.name} acabou de crescer'
                 f' {height} cm. Sua altura passou a ser de {self.height}.')
         return _str
+
+Murilo = Pessoa(name = 'Murilo', age = 23, weight = 75, height = 1.78)
+print(f'\nNome: {Murilo.name}\nIdade: {Murilo.age} anos'
+      f'\nPeso:{Murilo.weight}kg\nAltura:{Murilo.height}m\n')
