@@ -27,9 +27,9 @@ class retangulo:
         return _str
 
 def main():
-    base = input('Digite o valor da base do retângulo: ')
+    base = input('Digite o valor da base da área: ')
     base = float(base)
-    altura = input('Digite o valor da altura do retângulo: ')
+    altura = input('Digite o valor da altura da área: ')
     altura = float(altura)
     retangulo_main = retangulo(base = base, altura = altura)
     print(retangulo_main.Calc_area())
