@@ -14,13 +14,13 @@ class Bola:
         self.cor = cor
         print(f'Cor alterada para {self.cor}.')
 
-
-    def _get_cor(self):
+    @property
+    def corBola(self):
         '''
         Printa no terminal a cor atual de um objeto da classe Bola.
 
         Comando:
-        nome_do_objeto._get_cor()
+        nome_do_objeto.cor
 
         '''
         return self.cor
