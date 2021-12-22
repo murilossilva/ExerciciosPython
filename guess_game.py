@@ -12,7 +12,7 @@ while True:
     if letra in palavra:
         letras_acertadas.append(letra)
         print('-----------------------------------------------')
-        print(f'Parabéns, a letra "{letra}" existe na palavra!')
+        print(f'\nYesss! A letra "{letra}" existe na palavra!')
     else:
         chances -= 1
         print(f'A letra "{letra}" não está presente na palavra!'
@@ -25,9 +25,13 @@ while True:
         else:
             palavra_temporaria += '*'
 
-    print(f'\nA palavra está assim: {palavra_temporaria}'
-          f'\nTente adivinhar mais letras!\n'
-          f'-----------------------------------------------')
+    if palavra_temporaria == palavra:
+        print(f'\nParabéns, você GANHOU! A palavra era "{palavra}"!')
+        break
+    else:
+        print(f'\nA palavra está assim: {palavra_temporaria}'
+              f'\nTente adivinhar mais letras!\n\n'
+              f'-----------------------------------------------')
 
     if chances <= 0:
         print(f'\nVocê perdeu todas as suas chances, a palavra era "{palavra}"!')
