@@ -1,4 +1,4 @@
-print('Olá, vamos calcular os dois últimos digítos do seu CPF? ')
+print('Olá, vamos descobrir os dois últimos digítos do seu CPF? ')
 primeiros_numeros = input('Insira os 9 primeiros dígitos do seu CPF: ')
 
 primeiros_numeros = primeiros_numeros.split('.')
@@ -15,7 +15,7 @@ for num in range(10, 1, -1):
 
 soma_primeiro_dig = sum(lista_numeros)
 
-# fórmula para descobrir qual será o primeiro dígito
+# fórmula para descobrir qual será o próximo dígito
 primeiro_dig = 11 - (soma_primeiro_dig % 11)
 
 primeiro_dig = 0 if primeiro_dig > 9 else primeiro_dig
@@ -33,10 +33,11 @@ for num in range(11,1,-1):
     lista_numeros_2.append(mult_segundo_digito)
     j += 1
 
-# fórmula para o segundo dígito
+# fórmula para descobrir o próximo dígito
 soma_segundo_dig = sum(lista_numeros_2)
 
 segundo_dig = 11 - (soma_segundo_dig % 11)
+segundo_dig = 0 if segundo_dig > 9 else segundo_dig
 print(f'O segundo dígito final será {segundo_dig}')
 
 digitos_finais = str(primeiro_dig) + str(segundo_dig)
