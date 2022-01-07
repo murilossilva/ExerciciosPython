@@ -2,7 +2,7 @@ def func_2(*args):
     return args
 
 def func_1(*args):
-    return soma(*args), sub(*args)
+    return *args, soma(*args), sub(*args)
 
 def soma(*args, valor=50):
     return(sum(args, valor))
@@ -12,8 +12,6 @@ def sub(*args):
     for v in args:
         total -= v
     return total
-
-
 
 lista = [10, 20, 30, 40]
 var = func_2(*lista)
