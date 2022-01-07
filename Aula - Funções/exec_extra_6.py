@@ -1,9 +1,3 @@
-'''
-Faça
-a função1 executar duas funções que recebam um número
-diferente de argumentos.
-'''
-
 def func_2(*args):
     return args
 
