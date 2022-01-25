@@ -4,7 +4,7 @@ print('Responda cada uma das perguntas com apenas uma alternativa [a,b,c ou d]')
 perguntas = {
     'Pergunta 1' : {'pergunta' : 'Qual bicho transmite Doença de Chagas?',
                     'alternativas' :
-                    {'a' : 'Moscas',
+                    {'a' : 'Abelha',
                      'b' : 'Barata',
                      'c' : 'Pulga',
                      'd' : 'Barbeiro',
