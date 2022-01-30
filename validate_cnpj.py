@@ -2,7 +2,26 @@ import re
 from itertools import count
 
 def remove_caracteres_especiais(cnpj):
-    cnpj = re.sub(r'[^0-9]', '', cnpj)
+    return re.sub(r'[^0-9]', '', cnpj)
+
+
+def sequencia(cnpj):
+    try:
+        sequencia = cnpj[0] * len(cnpj)
+        if sequencia == cnpj:
+            print('Números em sequência. CNPJ inválido!')
+        else:
+            return False
+    except Exception as error:
+        pass
+
+
+def validacao(cnpj):
+    cnpj = remove_caracteres_especiais(cnpj)
+    
+    if sequencia(cnpj):
+        return False
+    
     cnpj_copia = cnpj[:-2]
     return contadores(cnpj_copia)
 
@@ -16,6 +35,7 @@ def contadores(cnpj_copia):
     #  cria o contador para verificar o segundo dígito
     else:
         contador_1 = count(start = 6, step = -1)
+        
     contador_2 = count(start = 9, step = -1)
     
     return multiplica_algarismos(cnpj_copia, contador_1, contador_2)
@@ -51,12 +71,8 @@ def multiplica_algarismos(cnpj_copia, contador_1, contador_2):
 
 
 def formula(lista_com_resultados, cnpj_copia):
-    digito = 11 - (lista_com_resultados % 11)
-    
-    if digito > 9:
-        digito = 0
-    else:
-        pass
+    digito = 11 - (lista_com_resultados % 11)    
+    digito = digito if digito <= 9 else 0
     
     cnpj_copia += str(digito)
 
@@ -72,7 +88,7 @@ def formula(lista_com_resultados, cnpj_copia):
 if __name__ == '__main__':
     while True:
         cnpj = input('Digite um cnpj para saber se ele é válido ou não: ')
-        cnpj_copia = remove_caracteres_especiais(cnpj)
+        cnpj_copia = validacao(cnpj)
         cnpj = re.sub(r'[^0-9]', '', cnpj)
         print('É válido' if cnpj == cnpj_copia else 'Não é válido')
 
